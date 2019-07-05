@@ -1,3 +1,3 @@
 ## Build Todo React App
 
-React Tutorial and Projects Course
+Udemy: React Tutorial and Projects Course
