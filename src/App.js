@@ -21,10 +21,10 @@ class App extends Component {
     editItem: false
   };
 
-  handleChange = event => {
+  handleChange = e => {
     console.log("handle change");
   };
-  handleSubmit = event => {
+  handleSubmit = e => {
     console.log("handle submit");
   };
   handleClearList = () => {
