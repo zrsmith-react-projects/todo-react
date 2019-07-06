@@ -22,7 +22,9 @@ class App extends Component {
   };
 
   handleChange = e => {
-    console.log("handle change");
+    this.setState({
+      item: e.target.value
+    });
   };
   handleSubmit = e => {
     console.log("handle submit");
@@ -47,15 +49,15 @@ class App extends Component {
 
             <TodoInput
               item={this.state.item}
-              handleChange={this.state.handleChange}
-              handleSubmit={this.state.handleSubmit}
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
               editItem={this.state.editItem}
             />
             <TodoList
               items={this.state.items}
-              handleClearList={this.state.handleClearList}
-              handleDelete={this.state.handleDelete}
-              handleEdit={this.state.handleEdit}
+              handleClearList={this.handleClearList}
+              handleDelete={this.handleDelete}
+              handleEdit={this.handleEdit}
             />
           </div>
         </div>
