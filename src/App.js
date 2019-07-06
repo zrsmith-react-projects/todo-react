@@ -6,16 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 class App extends Component {
   state = {
-    items: [
-      {
-        id: 1,
-        title: "do your homework"
-      },
-      {
-        id: 2,
-        title: "go pick up wawa"
-      }
-    ],
+    items: [],
     id: uuid(),
     item: "",
     editItem: false
@@ -27,7 +18,22 @@ class App extends Component {
     });
   };
   handleSubmit = e => {
-    console.log("handle submit");
+    e.preventDefault();
+    const newItem = {
+      id: this.state.id,
+      title: this.state.item
+    };
+    const updatedItems = [...this.state.items, newItem];
+
+    this.setState(
+      {
+        items: updatedItems,
+        item: "",
+        id: uuid(),
+        editItem: false
+      },
+      () => console.log(this.state)
+    );
   };
   handleClearList = () => {
     console.log("clear list");
